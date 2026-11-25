@@ -1,0 +1,40 @@
+:root {
+  --bg: #070a12; --card: rgba(15, 22, 36, 0.9); --border: rgba(255, 255, 255, 0.08);
+  --cyan: #00e5ff; --emerald: #10b981; --violet: #8b5cf6; --text: #f1f5f9; --muted: #94a3b8;
+  --font-sans: 'Inter', sans-serif; --font-mono: 'Fira Code', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
+.shell { max-width: 1400px; margin: 0 auto; padding: 1.4rem 2rem 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; min-height: 100vh; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.4rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; flex-wrap: wrap; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: 0.9rem; }
+.logo { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; font-size: 1.3rem; background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.35); }
+.brand h1 { font-size: 1.35rem; font-weight: 800; }
+.accent { color: var(--cyan); } .subtitle { font-size: 0.78rem; color: var(--muted); }
+.nav-actions { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.ai-pill { font-family: var(--font-mono); font-size: 0.74rem; padding: 0.35rem 0.7rem; border-radius: 999px; background: rgba(139, 92, 246, 0.14); border: 1px solid rgba(139, 92, 246, 0.35); color: #c4b5fd; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; flex: 1; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+.panel { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+.panel-head { padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.drop-banner { padding: 0.6rem 1.2rem; background: rgba(0, 229, 255, 0.08); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; font-size: 0.76rem; color: #a5f3fc; }
+.ocr-status { font-family: var(--font-mono); color: var(--emerald); font-weight: 600; }
+textarea { width: 100%; flex: 1; min-height: 330px; background: transparent; border: none; padding: 1.1rem 1.25rem; color: var(--text); font-family: var(--font-mono); font-size: 0.83rem; line-height: 1.6; resize: vertical; outline: none; }
+.panel-foot { padding: 0.85rem 1.2rem; border-top: 1px solid var(--border); background: rgba(0, 0, 0, 0.22); }
+.summary-box { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; white-space: pre-wrap; background: rgba(0, 0, 0, 0.2); }
+.cards-list { padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.75rem; max-height: 360px; overflow-y: auto; }
+.flashcard { background: rgba(0, 0, 0, 0.32); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 10px; padding: 0.85rem 1rem; cursor: pointer; transition: border-color 0.2s; }
+.flashcard:hover { border-color: var(--cyan); }
+.fc-q { font-weight: 700; font-size: 0.86rem; margin-bottom: 0.35rem; }
+.fc-a { font-size: 0.82rem; color: var(--emerald); font-family: var(--font-mono); }
+.fc-a.hidden { display: none; }
+.fc-hint { font-size: 0.72rem; color: #64748b; }
+.btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: none; text-decoration: none; font-family: var(--font-sans); }
+.btn-sm { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
+.btn-primary { background: linear-gradient(135deg, var(--cyan), #00a8ff); color: #070a12; }
+.btn-secondary { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border); color: var(--text); }
+.btn-ghost { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border); color: var(--muted); }
+.upload-lbl { cursor: pointer; }
+.footer { text-align: center; margin-top: auto; padding-top: 0.9rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: #64748b; }
+.footer a { color: var(--cyan); text-decoration: none; }

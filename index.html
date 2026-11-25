@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyForge &amp; ClipOCR AI — Screenshot OCR, Notes TL;DR &amp; Anki Flashcards</title>
+  <meta name="description" content="Client-side Tesseract.js screenshot OCR, lecture note summarizer, and spaced-repetition Anki CSV flashcard generator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo">🎓</div>
+        <div>
+          <h1>StudyForge <span class="accent">&amp; ClipOCR AI</span></h1>
+          <p class="subtitle">In-Browser Screenshot OCR, Lecture Summarizer &amp; Anki Flashcards</p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <span class="ai-pill" id="aiEngineBadge">Engine: Offline + OCR</span>
+        <a href="https://krishnagupta-coder.github.io/" class="btn btn-ghost">⚡ Krishna.OS</a>
+        <a href="https://github.com/KrishnaGupta-coder/StudyForge-AI" target="_blank" class="btn btn-ghost">GitHub</a>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Left: Screenshot OCR & Notes -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>📷 Screenshot OCR &amp; Study Input</h3>
+          <div class="btn-row">
+            <label class="btn btn-sm btn-secondary upload-lbl">
+              Upload Image
+              <input type="file" id="ocrImageInput" accept="image/*" hidden>
+            </label>
+            <button id="btnSampleNotes" class="btn btn-sm btn-ghost">Sample Notes</button>
+          </div>
+        </div>
+        <div class="drop-banner" id="pasteZone">
+          <span>Tip: Press <b>Ctrl + V</b> anywhere on this page to OCR a copied screenshot offline via Tesseract.js!</span>
+          <span class="ocr-status" id="ocrStatus">OCR Ready</span>
+        </div>
+        <textarea id="studyInput" placeholder="Paste lecture notes, textbook text, YouTube transcript, or upload/paste a screenshot above..."></textarea>
+        <div class="panel-foot">
+          <div class="btn-row">
+            <button id="btnBuildStudy" class="btn btn-primary">Generate Summary &amp; Flashcards ⚡</button>
+            <button id="btnExportAnki" class="btn btn-secondary">Export Anki CSV</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: TL;DR + Interactive Flip Flashcards -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>🧠 Study Summary &amp; Active Recall Deck (<span id="cardCountVal">0</span>)</h3>
+          <button id="btnShuffleCards" class="btn btn-sm btn-ghost">Shuffle ↻</button>
+        </div>
+        <div class="summary-box" id="summaryBox">
+          Load notes or paste a screenshot to build key takeaways and flashcards.
+        </div>
+        <div class="cards-list" id="flashcardsList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>StudyForge &amp; ClipOCR AI &bull; Tesseract.js OCR + Shared AI &bull; Part of <a href="https://krishnagupta-coder.github.io/">Krishna.OS</a></span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
